@@ -5,14 +5,15 @@ function getBMI(){
     let finalH= heightinMeter* heightinMeter;
     let BMI= weight/finalH;
     let category='';
-    // let heightinMiter= height* 0.01;
-    // let finalHeight= heightinMiter*heightinMiter;
-    // let BMI = weight/finalHeight;
-    // return BMI;
+
+    if (BMI < 0 || BMI > 40 || isNaN(BMI)) {
+        alert('Invalid input! Please enter valid weight and height.');
+        return;
+    }
     if(BMI <18.5){
       category='আপনার ওজন কম। পুষ্টিকর খাবার খান, যেমন প্রোটিন, শস্য, ও স্বাস্থ্যকর ফ্যাট। নিয়মিত খাওয়ার অভ্যাস করুন ও বিশেষজ্ঞের পরামর্শ নিন'
     }
-    else if(BMI <= 24.9){
+    else if(BMI <= 24.9 ){
         category='আপনার BMI স্বাভাবিক! স্বাস্থ্যকর খাদ্যাভ্যাস ও নিয়মিত ব্যায়াম চালিয়ে যান। সুস্থ থাকতে জীবনযাত্রা বজায় রাখুন।'
     }
     else if(BMI<= 29.9){
